@@ -1,0 +1,103 @@
+* {
+    font-family: sans-serif;
+}
+
+html {
+    --last-byte-width: 50%;
+    --tacos-color: red;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+body {
+    background-image: url("./background.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #040b15;
+    margin: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0009;
+}
+
+#converter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#ipt, #res {
+    width: 2ch;
+}
+
+#tacos-row {
+    font-size: 0;
+    overflow-y: auto;
+    text-align: center;
+}
+
+input, span, #last-byte {
+    font-size: 4rem;
+    font-family: monospace;
+    text-align: center;
+}
+
+input {
+    background-color: #ccc;
+    border: none;
+    border-radius: 0.8rem;
+    padding: 0.2em 0.3em;
+    color: #000;
+}
+
+h1, p, .separator {
+    color: #fff;
+    text-align: center;
+}
+
+#last-byte {
+	margin: 0;
+	position: relative;
+	text-align: center;
+	display: none;
+    background: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#last-byte:before {
+    content: attr(data-heading);
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--last-byte-width);
+    display: inline-block;
+    -webkit-text-fill-color: var(--tacos-color);
+}
+
+/* REMOVE ARROW KEYS FROM INPUTs */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
